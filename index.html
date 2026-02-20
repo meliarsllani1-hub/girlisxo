@@ -1,145 +1,353 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Claim Your $750 SHEIN Gift Card</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SHEIN Gift Card</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preconnect" href="https://i.postimg.cc"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
-
-<!-- ✅ Umami Analytics -->
-<script
-  defer
-  src="https://cloud.umami.is/script.js"
-  data-website-id="e31dbf23-205e-461a-bad9-7ba00af4da9d">
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
 
 <style>
-body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
-.steps-box{color:#000;padding:20px;font-size:17px;text-align:center;line-height:1.6;max-width:500px;margin:20px auto;box-sizing:border-box;}
-.steps-box p{margin:16px 0;}
-.shein-btn{background:#ff66b2;color:#fff;padding:14px 20px;font-size:15px;border:2px solid #fff;cursor:pointer;display:flex;align-items:center;justify-content:flex-start;border-radius:50px;font-family:'Montserrat',sans-serif;width:100%;max-width:500px;margin:6px auto 14px auto;box-sizing:border-box;transition:transform 0.2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:sheinPulse 2.2s infinite;text-decoration:none;}
-.shein-btn:hover{transform:scale(1.05);}
-@keyframes sheinPulse{0%{box-shadow:0 0 0 0 rgba(255,102,178,0.35);}70%{box-shadow:0 0 0 10px rgba(255,102,178,0);}100%{box-shadow:0 0 0 0 rgba(255,102,178,0);}}
-.text-container span:first-child{font-size:16px;font-weight:500;}
-.subtext{font-size:11px;margin-top:4px;opacity:0.9;}
-.eligible-box{background:#fff;max-width:500px;margin:10px auto 0;padding:10px 14px;font-size:13px;text-align:center;color:#333;border-radius:12px;border:1px solid #eee;box-shadow:0 1px 6px rgba(0,0,0,0.04);font-weight:500;min-height:38px;display:flex;align-items:center;justify-content:center;}
-.trust-text{text-align:center;font-size:12px;color:#888;margin-top:12px;font-weight:500;max-width:500px;margin-left:auto;margin-right:auto;}
-.proof-headline{font-size:18px;font-weight:700;color:#222;text-align:center;margin-top:48px;margin-bottom:16px;}
-.proof-image{width:100%;max-width:400px;border-radius:10px;display:block;margin:0 auto 20px;box-shadow:0 6px 24px rgba(0,0,0,0.11);}
+  :root{
+    --pink:#ff4fa6;
+    --pink2:#ff7ec6;
+    --text:#111;
+    --muted:#6d6d6d;
+    --card:#ffffff;
+    --line:#eeeeee;
+    --shadow:0 10px 28px rgba(0,0,0,.10);
+    --shadowSoft:0 10px 24px rgba(0,0,0,.06);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:#f6f6f8;
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,'Montserrat',sans-serif;
+    color:var(--text);
+  }
+
+  .wrap{
+    max-width:520px;
+    margin:0 auto;
+    padding:16px 14px 34px;
+    position:relative;
+  }
+
+  .top-card{
+    background:rgba(255,255,255,.96);
+    border:1px solid rgba(0,0,0,.06);
+    border-radius:22px;
+    padding:12px 12px 10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    margin:4px 0 12px;
+  }
+
+  .top{text-align:center;}
+  .avatar{
+    width:78px;height:78px;border-radius:50%;
+    display:block;margin:6px auto 10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+  }
+  .kicker{
+    font-size:14px;color:var(--muted);
+    margin:0 0 6px;font-weight:900;letter-spacing:.1px;
+  }
+  .headline{
+    font-size:19px;line-height:1.18;
+    margin:0 0 8px;font-weight:900;letter-spacing:-.3px;
+  }
+  .sub{
+    font-size:14px;color:var(--muted);
+    margin:0 0 2px;line-height:1.45;font-weight:850;
+  }
+
+  /* Single CTA (iOS-like, super tappable) */
+  .shein-btn{
+    background:linear-gradient(135deg,var(--pink),var(--pink2));
+    color:#fff;
+    padding:16px 18px;
+    border:0;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    border-radius:999px;
+    width:100%;
+    margin:12px auto 10px;
+    text-decoration:none;
+    position:relative;
+    transition:transform .18s ease, filter .18s ease;
+    box-shadow:0 18px 40px rgba(255,79,166,.26);
+    -webkit-tap-highlight-color:transparent;
+    user-select:none;
+    overflow:hidden;
+  }
+  .shein-btn:before{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(140px 70px at 18% 45%, rgba(255,255,255,.26), transparent 60%);
+    pointer-events:none;
+  }
+  .shein-btn:hover{transform:scale(1.02); filter:saturate(1.04);}
+  .shein-btn:active{transform:scale(0.99);}
+
+  .btn-icon{
+    width:44px;height:44px;border-radius:50%;
+    flex:0 0 auto;
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+    background:#fff;
+  }
+  .btn-text{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    margin-left:12px;
+    min-width:0;
+  }
+  .btn-title{font-size:16px;font-weight:900;line-height:1.15;}
+  .btn-sub{font-size:12px;opacity:.96;margin-top:3px;font-weight:900;}
+
+  .btn-arrow{
+    width:34px;height:34px;border-radius:999px;
+    background:rgba(255,255,255,.24);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;
+    margin-left:10px;
+    flex:0 0 auto;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);
+  }
+
+  .micro{
+    text-align:center;
+    font-size:12px;
+    color:#7a7a7a;
+    margin:8px 0 10px;
+    font-weight:900;
+  }
+
+  .eligible-box{
+    background:rgba(255,255,255,.94);
+    margin:10px auto 14px;
+    padding:11px 14px;
+    font-size:13px;
+    text-align:center;
+    color:#333;
+    border-radius:14px;
+    border:1px solid rgba(238,238,238,.9);
+    box-shadow:0 8px 18px rgba(0,0,0,.05);
+    font-weight:900;
+    min-height:40px;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  .divider{
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(0,0,0,.06), transparent);
+    margin:12px 0 10px;
+  }
+
+  /* Steps (visible, short, friendly) */
+  .how-box{
+    margin:12px 0 6px;
+    border:1px solid rgba(238,238,238,.95);
+    border-radius:18px;
+    padding:12px;
+    background:rgba(255,255,255,.97);
+    box-shadow:var(--shadowSoft);
+  }
+  .how-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    font-weight:900;
+    font-size:13px;
+    color:#222;
+    margin-bottom:8px;
+  }
+  .tap-pill{
+    font-size:11px;
+    font-weight:900;
+    padding:5px 10px;
+    border-radius:999px;
+    border:1px solid #f1f1f1;
+    background:#fafafa;
+    color:#333;
+  }
+
+  .steps{margin-top:6px;font-size:13px;color:#333;line-height:1.55;font-weight:850;}
+  .step-row{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:12px;}
+  .step-row:not(:last-child){border-bottom:1px solid rgba(0,0,0,.04);}
+  .step-num{
+    width:24px;height:24px;border-radius:999px;
+    background:rgba(255,79,166,.12);
+    color:#ff2f97;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:12px;margin-top:1px;
+    flex:0 0 auto;
+  }
+  .step-text{flex:1;}
+
+  /* EPC helper line (soft commitment, low CTR impact) */
+  .tip{
+    margin:10px 0 0;
+    font-size:12px;
+    color:#7a7a7a;
+    font-weight:900;
+    text-align:center;
+  }
 </style>
 </head>
 
 <body>
+  <div class="wrap">
 
-<div style="text-align:center;margin:20px 0 25px;">
-  <img src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png"
-       style="width:80px;height:80px;border-radius:50%;margin-bottom:15px;" />
-  <h1 style="font-size:24px;font-weight:400;margin:0 0 8px;">Claim Your Gift Card Now!</h1>
-  <p style="font-size:15px;color:#6D6D6D;margin:0;">Higher value deals = faster rewards!</p>
-</div>
+    <div class="top-card">
+      <div class="top">
+        <img class="avatar" src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" alt=""/>
+        <p class="kicker">if you’re wondering too…</p>
+        <h1 class="headline">this is the SHEIN gift card 💖</h1>
+        <p class="sub">Tap below to continue.</p>
+      </div>
+    </div>
 
-<div class="steps-box">
-  <p>1. Click The Link Below👇</p>
-  <p>2. Enter Your Email &amp; Basic Info</p>
-  <p>3. Complete Recommended Deals<br>
-    <span style="font-size:12px;color:#6D6D6D;">(Higher value deals = faster rewards!)</span>
-  </p>
-  <p>4. Claim Your Gift Card!</p>
-</div>
+    <!-- SINGLE CTA ONLY -->
+    <a href="#" class="shein-btn cta-link" id="shein-btn" aria-label="SHEIN Gift Card">
+      <img class="btn-icon" src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" alt=""/>
+      <div class="btn-text">
+        <span class="btn-title">Reveal my reward</span>
+        <span class="btn-sub">Continue →</span>
+      </div>
+      <div class="btn-arrow" aria-hidden="true">›</div>
+    </a>
 
-<a id="shein-btn-rewards" href="#" class="shein-btn" data-umami-event="offer-click">
-  <img src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp"
-       style="width:45px;height:45px;margin-right:12px;border-radius:50%;" />
-  <div class="text-container" style="display:flex;flex-direction:column;align-items:flex-start;margin-left:25px;">
-    <span>$750 SHEIN Gift Card</span>
-    <span class="subtext">(Enter Email &amp; Complete Deals)</span>
+    <p class="micro">works on mobile • official partners</p>
+
+    <!-- Positive instantly; geo will refine -->
+    <div class="eligible-box" id="eligible-box">✅ Reward available in your country 🌍</div>
+
+    <div class="divider"></div>
+
+    <!-- Steps (visible, not collapsed) -->
+    <div class="how-box" id="how">
+      <div class="how-head">
+        <span>How it works</span>
+        <span class="tap-pill">3 steps</span>
+      </div>
+
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <div class="step-text">Tap the pink button above 👆</div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div class="step-text">Enter your email to continue</div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div class="step-text">Follow the steps shown to claim ✅</div>
+        </div>
+      </div>
+
+      <p class="tip">Tip: follow the steps shown on the next page to receive it 💖</p>
+    </div>
+
   </div>
-</a>
 
-<div class="eligible-box" id="eligible-box-rewards">Checking eligibility...</div>
-<p class="trust-text">🔒 256-bit Encryption – Powered by Trusted Partners</p>
+  <!-- UMAMI -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
 
-<div class="proof-headline">Real Rewards. Real People. 👇</div>
-<img class="proof-image" src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg"/>
-<img class="proof-image" src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg"/>
+  <script>
+    const eligibleBox = document.getElementById('eligible-box');
+    const buttons = document.querySelectorAll('.cta-link');
 
-<script>
-const eligibleBox = document.getElementById('eligible-box-rewards');
-const btn = document.getElementById('shein-btn-rewards');
+    // redirect links (UNCHANGED)
+const linkUS="https://glctrk.org/aff_c?offer_id=3093&aff_id=16188";  
+const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=16188";
+const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=16188"; 
+const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=16188";  
+    const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
 
-/* ===============================
-   🔒 STICKY 60 / 40 BUCKET
-================================ */
-let bucket = localStorage.getItem("shein_bucket_v2");
+    // default instantly for ALL buttons
+    buttons.forEach(b => b.href = linkRest);
 
-if (!bucket) {
-  bucket = Math.random() < 0.60 ? "60" : "40";
-  localStorage.setItem("shein_bucket_v2", bucket);
-}
+    // ---- GEO FIX (high-traffic safe): timeout + cache-bust + 3 providers + final fallback ----
+    const withTimeout = (p, ms=1200) =>
+      Promise.race([p, new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")), ms))]);
 
-const is60 = bucket === "60";
+    const tryProvider = async (url, mapFn) => {
+      const sep = url.includes("?") ? "&" : "?";
+      const r = await withTimeout(fetch(url + sep + "_=" + Date.now(), {
+        cache: "no-store",
+        credentials: "omit"
+      }), 1200);
+      if(!r.ok) throw new Error("bad_status_" + r.status);
+      const d = await r.json();
+      const out = mapFn(d);
+      if(!out || !out.cc) throw new Error("bad_payload");
+      return out;
+    };
 
-/* ===============================
-   🔗 LINKS
-================================ */
-const affId = is60 ? "16188" : "15802";
+    (async()=>{
+      try{
+        // 1) ipapi
+        const {cc, cn} = await tryProvider("https://ipapi.co/json/", d => ({ cc: d.country, cn: d.country_name }));
+        setEligible(cc, cn);
+        return;
+      }catch(e){}
 
-const linkUS = `https://glctrk.org/aff_c?offer_id=3091&aff_id=${affId}`;
-const linkCA = `https://glctrk.org/aff_c?offer_id=3105&aff_id=${affId}`;
-const linkGB = linkCA;
-const linkAU = linkCA;
+      try{
+        // 2) ipwho
+        const {cc, cn} = await tryProvider("https://ipwho.is/", d => ({ cc: d.country_code, cn: d.country }));
+        setEligible(cc, cn);
+        return;
+      }catch(e){}
 
-const linkRest = is60
-  ? "https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjgyYjcxZjQxNmM0OTJmNjg5MDU2NTAyIiwiYSI6Ijc1MCIsInRzIjoxNzU3MDg2ODE4MDE2fQ?amount=750"
-  : "https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzU3MTAyMzU2MzczfQ?amount=750";
+      try{
+        // 3) ipinfo (extra backup for high-traffic spikes)
+        const {cc, cn} = await tryProvider("https://ipinfo.io/json", d => ({ cc: d.country, cn: d.country }));
+        setEligible(cc, cn);
+        return;
+      }catch(e){}
 
-/* ===============================
-   🌍 HELPERS
-================================ */
-function flag(cc){
-  if(!cc || cc.length !== 2) return "";
-  return String.fromCodePoint(...[...cc.toUpperCase()].map(c => 127397 + c.charCodeAt()));
-}
+      // Final fallback: don't leave "Checking..."
+      eligibleBox.textContent = "✅ Reward available 🌍";
+    })();
+    // ----------------------------------------------------------------------------------------
 
-function setEligible(cc, cn){
-  eligibleBox.textContent = `✅ You are eligible – ${cn} ${flag(cc)}`;
+    function countryCodeToFlagEmoji(cc){
+      if(!cc || cc.length!==2) return "";
+      return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));
+    }
 
-  if (cc === "US") btn.href = linkUS;
-  else if (cc === "CA") btn.href = linkCA;
-  else if (cc === "GB") btn.href = linkGB;
-  else if (cc === "AU") btn.href = linkAU;
-  else btn.href = linkRest;
-}
+    function setEligible(cc, cn){
+      eligibleBox.textContent = cn
+        ? `✅ Reward available in ${cn} ${countryCodeToFlagEmoji(cc)}`
+        : `✅ Reward available ${countryCodeToFlagEmoji(cc)}`;
 
-/* ===============================
-   📡 GEO
-================================ */
-fetch('https://ipapi.co/json/')
-.then(r => r.ok ? r.json() : Promise.reject())
-.then(d => {
-  if (d?.country && d?.country_name) {
-    setEligible(d.country, d.country_name);
-  } else throw 0;
-})
-.catch(() => {
-  fetch('https://ipwho.is/')
-  .then(r => r.ok ? r.json() : Promise.reject())
-  .then(d => {
-    if (d && d.success !== false) {
-      setEligible(d.country_code, d.country);
-    } else throw 0;
-  })
-  .catch(() => {
-    eligibleBox.textContent = "✅ You are eligible 🌍";
-    btn.href = linkRest;
-  });
-});
-</script>
+      let target = linkRest;
+      if(cc==="US") target = linkUS;
+      else if(cc==="CA") target = linkCA;
+      else if(cc==="GB") target = linkGB;
+      else if(cc==="AU") target = linkAU;
 
+      buttons.forEach(b => b.href = target);
+    }
+
+    // Umami tracking with delay to fire before redirect (UNCHANGED EVENT NAME)
+    buttons.forEach((btn)=>{
+      btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        const url = btn.href;
+        if(window.umami) umami.track("SHEIN Offer Click");
+        setTimeout(()=>{window.location.href=url;},160);
+      });
+    });
+  </script>
 </body>
 </html>
