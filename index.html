@@ -306,11 +306,31 @@ data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
   const eligibleBox = document.getElementById('eligible-box');
   const buttons = document.querySelectorAll('.cta-link');
 
-  const linkUS="https://giftclick.org/aff_c?offer_id=3093&aff_id=16188";
-  const linkCA="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188";
-  const linkGB="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188";
-  const linkAU="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188";
   const linkRest="https://raintrkr.com/r/eyJ0Ijoic2hlaW4iLCJ0aWQiOiI2MzhhZTE3MDIyNjkxODg2NDkzOCIsInRzIjoxNzc3OTg5OTgxODYyfQ";
+
+  const offerByCountry = {
+    US: "3093",
+    CA: "3105",
+    GB: "3105",
+    AU: "3105"
+  };
+
+  function getWeightedAffiliateId(){
+    const saved = sessionStorage.getItem("shein_affiliate_split");
+    if(saved) return saved;
+
+    const affiliateId = Math.random() < 0.70 ? "16188" : "15802";
+    sessionStorage.setItem("shein_affiliate_split", affiliateId);
+    return affiliateId;
+  }
+
+  function buildOfferLink(cc){
+    const offerId = offerByCountry[cc];
+    if(!offerId) return linkRest;
+
+    const affiliateId = getWeightedAffiliateId();
+    return `https://giftclick.org/aff_c?offer_id=${offerId}&aff_id=${affiliateId}`;
+  }
 
   buttons.forEach(b => b.href = linkRest);
 
@@ -324,12 +344,7 @@ data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
       ? `✅ Reward available in ${cn} ${countryCodeToFlagEmoji(cc)}`
       : `✅ Reward available ${countryCodeToFlagEmoji(cc)}`;
 
-    let target = linkRest;
-
-    if(cc==="US") target = linkUS;
-    else if(cc==="CA") target = linkCA;
-    else if(cc==="GB") target = linkGB;
-    else if(cc==="AU") target = linkAU;
+    const target = buildOfferLink(cc);
 
     buttons.forEach(b => b.href = target);
   }
