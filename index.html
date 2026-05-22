@@ -22,6 +22,7 @@
   }
 
   *{box-sizing:border-box;}
+
   body{
     background:#f6f6f8;
     margin:0;
@@ -46,25 +47,40 @@
   }
 
   .top{text-align:center;}
+
   .avatar{
-    width:78px;height:78px;border-radius:50%;
-    display:block;margin:6px auto 10px;
+    width:78px;
+    height:78px;
+    border-radius:50%;
+    display:block;
+    margin:6px auto 10px;
     box-shadow:0 8px 20px rgba(0,0,0,.10);
   }
+
   .kicker{
-    font-size:14px;color:var(--muted);
-    margin:0 0 6px;font-weight:900;letter-spacing:.1px;
-  }
-  .headline{
-    font-size:19px;line-height:1.18;
-    margin:0 0 8px;font-weight:900;letter-spacing:-.3px;
-  }
-  .sub{
-    font-size:14px;color:var(--muted);
-    margin:0 0 2px;line-height:1.45;font-weight:850;
+    font-size:14px;
+    color:var(--muted);
+    margin:0 0 6px;
+    font-weight:900;
+    letter-spacing:.1px;
   }
 
-  /* Single CTA (iOS-like, super tappable) */
+  .headline{
+    font-size:19px;
+    line-height:1.18;
+    margin:0 0 8px;
+    font-weight:900;
+    letter-spacing:-.3px;
+  }
+
+  .sub{
+    font-size:14px;
+    color:var(--muted);
+    margin:0 0 2px;
+    line-height:1.45;
+    font-weight:850;
+  }
+
   .shein-btn{
     background:linear-gradient(135deg,var(--pink),var(--pink2));
     color:#fff;
@@ -81,44 +97,50 @@
     position:relative;
     transition:transform .18s ease, filter .18s ease;
     box-shadow:0 18px 40px rgba(255,79,166,.26);
-    -webkit-tap-highlight-color:transparent;
-    user-select:none;
     overflow:hidden;
   }
-  .shein-btn:before{
-    content:"";
-    position:absolute;inset:0;
-    background:radial-gradient(140px 70px at 18% 45%, rgba(255,255,255,.26), transparent 60%);
-    pointer-events:none;
+
+  .shein-btn:hover{
+    transform:scale(1.02);
   }
-  .shein-btn:hover{transform:scale(1.02); filter:saturate(1.04);}
-  .shein-btn:active{transform:scale(0.99);}
 
   .btn-icon{
-    width:44px;height:44px;border-radius:50%;
+    width:44px;
+    height:44px;
+    border-radius:50%;
     flex:0 0 auto;
-    box-shadow:0 8px 18px rgba(0,0,0,.12);
     background:#fff;
   }
+
   .btn-text{
     flex:1;
     display:flex;
     flex-direction:column;
     align-items:flex-start;
     margin-left:12px;
-    min-width:0;
   }
-  .btn-title{font-size:16px;font-weight:900;line-height:1.15;}
-  .btn-sub{font-size:12px;opacity:.96;margin-top:3px;font-weight:900;}
+
+  .btn-title{
+    font-size:16px;
+    font-weight:900;
+  }
+
+  .btn-sub{
+    font-size:12px;
+    margin-top:3px;
+    font-weight:900;
+  }
 
   .btn-arrow{
-    width:34px;height:34px;border-radius:999px;
+    width:34px;
+    height:34px;
+    border-radius:999px;
     background:rgba(255,255,255,.24);
-    display:flex;align-items:center;justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-weight:900;
     margin-left:10px;
-    flex:0 0 auto;
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);
   }
 
   .micro{
@@ -130,7 +152,7 @@
   }
 
   .eligible-box{
-    background:rgba(255,255,255,.94);
+    background:#fff;
     margin:10px auto 14px;
     padding:11px 14px;
     font-size:13px;
@@ -140,8 +162,6 @@
     border:1px solid rgba(238,238,238,.9);
     box-shadow:0 8px 18px rgba(0,0,0,.05);
     font-weight:900;
-    min-height:40px;
-    display:flex;align-items:center;justify-content:center;
   }
 
   .divider{
@@ -150,25 +170,24 @@
     margin:12px 0 10px;
   }
 
-  /* Steps (visible, short, friendly) */
   .how-box{
     margin:12px 0 6px;
     border:1px solid rgba(238,238,238,.95);
     border-radius:18px;
     padding:12px;
-    background:rgba(255,255,255,.97);
+    background:#fff;
     box-shadow:var(--shadowSoft);
   }
+
   .how-head{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:10px;
     font-weight:900;
     font-size:13px;
-    color:#222;
     margin-bottom:8px;
   }
+
   .tap-pill{
     font-size:11px;
     font-weight:900;
@@ -176,23 +195,36 @@
     border-radius:999px;
     border:1px solid #f1f1f1;
     background:#fafafa;
-    color:#333;
   }
 
-  .steps{margin-top:6px;font-size:13px;color:#333;line-height:1.55;font-weight:850;}
-  .step-row{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:12px;}
-  .step-row:not(:last-child){border-bottom:1px solid rgba(0,0,0,.04);}
+  .steps{
+    margin-top:6px;
+    font-size:13px;
+    line-height:1.55;
+    font-weight:850;
+  }
+
+  .step-row{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:8px 6px;
+  }
+
   .step-num{
-    width:24px;height:24px;border-radius:999px;
+    width:24px;
+    height:24px;
+    border-radius:999px;
     background:rgba(255,79,166,.12);
     color:#ff2f97;
-    display:flex;align-items:center;justify-content:center;
-    font-weight:900;font-size:12px;margin-top:1px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:12px;
     flex:0 0 auto;
   }
-  .step-text{flex:1;}
 
-  /* EPC helper line (soft commitment, low CTR impact) */
   .tip{
     margin:10px 0 0;
     font-size:12px;
@@ -201,153 +233,129 @@
     text-align:center;
   }
 </style>
+
+<!-- UMAMI TRACKING -->
+<script defer src="https://cloud.umami.is/script.js"
+data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
+
 </head>
 
 <body>
-  <div class="wrap">
 
-    <div class="top-card">
-      <div class="top">
-        <img class="avatar" src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" alt=""/>
-        <p class="kicker">if you’re wondering too…</p>
-        <h1 class="headline">this is the SHEIN gift card 💖</h1>
-        <p class="sub">Tap below to continue.</p>
-      </div>
+<div class="wrap">
+
+  <div class="top-card">
+    <div class="top">
+      <img class="avatar" src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" alt=""/>
+      <p class="kicker">if you’re wondering too…</p>
+      <h1 class="headline">this is the SHEIN gift card 💖</h1>
+      <p class="sub">Tap below to continue.</p>
     </div>
-
-    <!-- SINGLE CTA ONLY -->
-    <a href="#" class="shein-btn cta-link" id="shein-btn" aria-label="SHEIN Gift Card">
-      <img class="btn-icon" src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" alt=""/>
-      <div class="btn-text">
-        <span class="btn-title">Reveal my reward</span>
-        <span class="btn-sub">Continue →</span>
-      </div>
-      <div class="btn-arrow" aria-hidden="true">›</div>
-    </a>
-
-    <p class="micro">works on mobile • official partners</p>
-
-    <!-- Positive instantly; geo will refine -->
-    <div class="eligible-box" id="eligible-box">✅ Reward available in your country 🌍</div>
-
-    <div class="divider"></div>
-
-    <!-- Steps (visible, not collapsed) -->
-    <div class="how-box" id="how">
-      <div class="how-head">
-        <span>How it works</span>
-        <span class="tap-pill">3 steps</span>
-      </div>
-
-      <div class="steps">
-        <div class="step-row">
-          <div class="step-num">1</div>
-          <div class="step-text">Tap the pink button above 👆</div>
-        </div>
-        <div class="step-row">
-          <div class="step-num">2</div>
-          <div class="step-text">Enter your email to continue</div>
-        </div>
-        <div class="step-row">
-          <div class="step-num">3</div>
-          <div class="step-text">Follow the steps shown to claim ✅</div>
-        </div>
-      </div>
-
-      <p class="tip">Tip: follow the steps shown on the next page to receive it 💖</p>
-    </div>
-
   </div>
 
-  <!-- UMAMI -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
+  <a href="#" class="shein-btn cta-link" id="shein-btn">
+    <img class="btn-icon" src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" alt=""/>
 
-  <script>
-    const eligibleBox = document.getElementById('eligible-box');
-    const buttons = document.querySelectorAll('.cta-link');
+    <div class="btn-text">
+      <span class="btn-title">Reveal my reward</span>
+      <span class="btn-sub">Continue →</span>
+    </div>
 
-    // redirect links (UNCHANGED)
-const linkUS="https://giftclick.org/aff_c?offer_id=3093&aff_id=16188";  
-const linkCA="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188";
-const linkGB="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188"; 
-const linkAU="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188";  
-    const linkRest="https://raintrkr.com/r/eyJ0Ijoic2hlaW4iLCJ0aWQiOiI2MzhhZTE3MDIyNjkxODg2NDkzOCIsInRzIjoxNzc3OTg5OTgxODYyfQ";
+    <div class="btn-arrow">›</div>
+  </a>
 
-    // default instantly for ALL buttons
-    buttons.forEach(b => b.href = linkRest);
+  <p class="micro">works on mobile • official partners</p>
 
-    // ---- GEO FIX (high-traffic safe): timeout + cache-bust + 3 providers + final fallback ----
-    const withTimeout = (p, ms=1200) =>
-      Promise.race([p, new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")), ms))]);
+  <div class="eligible-box" id="eligible-box">
+    ✅ Reward available in your country 🌍
+  </div>
 
-    const tryProvider = async (url, mapFn) => {
-      const sep = url.includes("?") ? "&" : "?";
-      const r = await withTimeout(fetch(url + sep + "_=" + Date.now(), {
-        cache: "no-store",
-        credentials: "omit"
-      }), 1200);
-      if(!r.ok) throw new Error("bad_status_" + r.status);
-      const d = await r.json();
-      const out = mapFn(d);
-      if(!out || !out.cc) throw new Error("bad_payload");
-      return out;
-    };
+  <div class="divider"></div>
 
-    (async()=>{
-      try{
-        // 1) ipapi
-        const {cc, cn} = await tryProvider("https://ipapi.co/json/", d => ({ cc: d.country, cn: d.country_name }));
-        setEligible(cc, cn);
-        return;
-      }catch(e){}
+  <div class="how-box">
+    <div class="how-head">
+      <span>How it works</span>
+      <span class="tap-pill">3 steps</span>
+    </div>
 
-      try{
-        // 2) ipwho
-        const {cc, cn} = await tryProvider("https://ipwho.is/", d => ({ cc: d.country_code, cn: d.country }));
-        setEligible(cc, cn);
-        return;
-      }catch(e){}
+    <div class="steps">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div>Tap the pink button above 👆</div>
+      </div>
 
-      try{
-        // 3) ipinfo (extra backup for high-traffic spikes)
-        const {cc, cn} = await tryProvider("https://ipinfo.io/json", d => ({ cc: d.country, cn: d.country }));
-        setEligible(cc, cn);
-        return;
-      }catch(e){}
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div>Enter your email to continue</div>
+      </div>
 
-      // Final fallback: don't leave "Checking..."
-      eligibleBox.textContent = "✅ Reward available 🌍";
-    })();
-    // ----------------------------------------------------------------------------------------
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div>Follow the steps shown to claim ✅</div>
+      </div>
+    </div>
 
-    function countryCodeToFlagEmoji(cc){
-      if(!cc || cc.length!==2) return "";
-      return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));
-    }
+    <p class="tip">
+      Tip: follow the steps shown on the next page to receive it 💖
+    </p>
+  </div>
 
-    function setEligible(cc, cn){
-      eligibleBox.textContent = cn
-        ? `✅ Reward available in ${cn} ${countryCodeToFlagEmoji(cc)}`
-        : `✅ Reward available ${countryCodeToFlagEmoji(cc)}`;
+</div>
 
-      let target = linkRest;
-      if(cc==="US") target = linkUS;
-      else if(cc==="CA") target = linkCA;
-      else if(cc==="GB") target = linkGB;
-      else if(cc==="AU") target = linkAU;
+<script>
+  const eligibleBox = document.getElementById('eligible-box');
+  const buttons = document.querySelectorAll('.cta-link');
 
-      buttons.forEach(b => b.href = target);
-    }
+  const linkUS="https://giftclick.org/aff_c?offer_id=3093&aff_id=16188";
+  const linkCA="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188";
+  const linkGB="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188";
+  const linkAU="https://giftclick.org/aff_c?offer_id=3105&aff_id=16188";
+  const linkRest="https://raintrkr.com/r/eyJ0Ijoic2hlaW4iLCJ0aWQiOiI2MzhhZTE3MDIyNjkxODg2NDkzOCIsInRzIjoxNzc3OTg5OTgxODYyfQ";
 
-    // Umami tracking with delay to fire before redirect (UNCHANGED EVENT NAME)
-    buttons.forEach((btn)=>{
-      btn.addEventListener('click',(e)=>{
-        e.preventDefault();
-        const url = btn.href;
-        if(window.umami) umami.track("SHEIN Offer Click");
-        setTimeout(()=>{window.location.href=url;},160);
-      });
+  buttons.forEach(b => b.href = linkRest);
+
+  function countryCodeToFlagEmoji(cc){
+    if(!cc || cc.length!==2) return "";
+    return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));
+  }
+
+  function setEligible(cc, cn){
+    eligibleBox.textContent = cn
+      ? `✅ Reward available in ${cn} ${countryCodeToFlagEmoji(cc)}`
+      : `✅ Reward available ${countryCodeToFlagEmoji(cc)}`;
+
+    let target = linkRest;
+
+    if(cc==="US") target = linkUS;
+    else if(cc==="CA") target = linkCA;
+    else if(cc==="GB") target = linkGB;
+    else if(cc==="AU") target = linkAU;
+
+    buttons.forEach(b => b.href = target);
+  }
+
+  fetch("https://ipapi.co/json/")
+    .then(res => res.json())
+    .then(data => {
+      setEligible(data.country, data.country_name);
     });
-  </script>
+
+  buttons.forEach((btn)=>{
+    btn.addEventListener('click',(e)=>{
+      e.preventDefault();
+
+      const url = btn.href;
+
+      if(window.umami){
+        umami.track("SHEIN Offer Click");
+      }
+
+      setTimeout(()=>{
+        window.location.href=url;
+      },160);
+    });
+  });
+</script>
+
 </body>
 </html>
