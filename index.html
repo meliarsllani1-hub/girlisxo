@@ -15,6 +15,10 @@
     --pink2:#ff7ec6;
     --text:#111;
     --muted:#6d6d6d;
+    --card:#ffffff;
+    --line:#eeeeee;
+    --shadow:0 10px 28px rgba(0,0,0,.10);
+    --shadowSoft:0 10px 24px rgba(0,0,0,.06);
   }
 
   *{
@@ -24,7 +28,7 @@
   body{
     background:#f6f6f8;
     margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,'Montserrat',sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,'Montserrat',sans-serif;
     color:var(--text);
   }
 
@@ -32,14 +36,19 @@
     max-width:520px;
     margin:0 auto;
     padding:16px 14px 34px;
+    position:relative;
   }
 
   .top-card{
-    background:#fff;
+    background:rgba(255,255,255,.96);
+    border:1px solid rgba(0,0,0,.06);
     border-radius:22px;
-    padding:12px;
+    padding:12px 12px 10px;
     box-shadow:0 8px 20px rgba(0,0,0,.05);
     margin:4px 0 12px;
+  }
+
+  .top{
     text-align:center;
   }
 
@@ -49,6 +58,7 @@
     border-radius:50%;
     display:block;
     margin:6px auto 10px;
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
   }
 
   .kicker{
@@ -68,7 +78,8 @@
   .sub{
     font-size:14px;
     color:var(--muted);
-    margin:0;
+    margin:0 0 2px;
+    line-height:1.45;
     font-weight:850;
   }
 
@@ -77,6 +88,7 @@
     color:#fff;
     padding:16px 18px;
     border:0;
+    cursor:pointer;
     display:flex;
     align-items:center;
     justify-content:flex-start;
@@ -84,13 +96,21 @@
     width:100%;
     margin:12px auto 10px;
     text-decoration:none;
+    position:relative;
+    transition:transform .18s ease;
     box-shadow:0 18px 40px rgba(255,79,166,.26);
+    overflow:hidden;
+  }
+
+  .shein-btn:hover{
+    transform:scale(1.02);
   }
 
   .btn-icon{
     width:44px;
     height:44px;
     border-radius:50%;
+    flex:0 0 auto;
     background:#fff;
   }
 
@@ -122,6 +142,7 @@
     align-items:center;
     justify-content:center;
     font-weight:900;
+    margin-left:10px;
   }
 
   .micro{
@@ -140,8 +161,78 @@
     text-align:center;
     color:#333;
     border-radius:14px;
+    border:1px solid rgba(238,238,238,.9);
     box-shadow:0 8px 18px rgba(0,0,0,.05);
     font-weight:900;
+  }
+
+  .divider{
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(0,0,0,.06), transparent);
+    margin:12px 0 10px;
+  }
+
+  .how-box{
+    margin:12px 0 6px;
+    border:1px solid rgba(238,238,238,.95);
+    border-radius:18px;
+    padding:12px;
+    background:#fff;
+    box-shadow:var(--shadowSoft);
+  }
+
+  .how-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-weight:900;
+    font-size:13px;
+    margin-bottom:8px;
+  }
+
+  .tap-pill{
+    font-size:11px;
+    font-weight:900;
+    padding:5px 10px;
+    border-radius:999px;
+    border:1px solid #f1f1f1;
+    background:#fafafa;
+  }
+
+  .steps{
+    margin-top:6px;
+    font-size:13px;
+    line-height:1.55;
+    font-weight:850;
+  }
+
+  .step-row{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:8px 6px;
+  }
+
+  .step-num{
+    width:24px;
+    height:24px;
+    border-radius:999px;
+    background:rgba(255,79,166,.12);
+    color:#ff2f97;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:12px;
+    flex:0 0 auto;
+  }
+
+  .tip{
+    margin:10px 0 0;
+    font-size:12px;
+    color:#7a7a7a;
+    font-weight:900;
+    text-align:center;
   }
 </style>
 
@@ -155,17 +246,22 @@ data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
 <div class="wrap">
 
   <div class="top-card">
-    <img class="avatar" src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png"/>
+    <div class="top">
+      <img class="avatar" src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" alt=""/>
 
-    <p class="kicker">if you’re wondering too…</p>
+      <p class="kicker">if you’re wondering too…</p>
 
-    <h1 class="headline">this is the SHEIN gift card 💖</h1>
+      <h1 class="headline">this is the SHEIN gift card 💖</h1>
 
-    <p class="sub">Tap below to continue.</p>
+      <p class="sub">Tap below to continue.</p>
+    </div>
   </div>
 
-  <a href="#" class="shein-btn cta-link">
-    <img class="btn-icon" src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp"/>
+  <a href="#" class="shein-btn cta-link" id="shein-btn">
+
+    <img class="btn-icon"
+    src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp"
+    alt=""/>
 
     <div class="btn-text">
       <span class="btn-title">Reveal my reward</span>
@@ -173,12 +269,47 @@ data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
     </div>
 
     <div class="btn-arrow">›</div>
+
   </a>
 
   <p class="micro">works on mobile • official partners</p>
 
   <div class="eligible-box" id="eligible-box">
-    ✅ Checking availability...
+    ✅ Checking reward availability...
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="how-box">
+
+    <div class="how-head">
+      <span>How it works</span>
+      <span class="tap-pill">3 steps</span>
+    </div>
+
+    <div class="steps">
+
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div>Tap the pink button above 👆</div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div>Enter your email to continue</div>
+      </div>
+
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div>Follow the steps shown to claim ✅</div>
+      </div>
+
+    </div>
+
+    <p class="tip">
+      Tip: follow the steps shown on the next page to receive it 💖
+    </p>
+
   </div>
 
 </div>
@@ -196,22 +327,34 @@ data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
     AU: "3105"
   };
 
-  function getWeightedAffiliateId() {
+  function getWeightedAffiliateId(){
+
     const saved = localStorage.getItem("shein_affiliate_split");
 
-    if(saved) return saved;
+    if(saved){
+      return saved;
+    }
 
-    const affiliateId = Math.random() < 0.70 ? "16188" : "15802";
+    const affiliateId =
+      Math.random() < 0.70
+      ? "16188"
+      : "15802";
 
-    localStorage.setItem("shein_affiliate_split", affiliateId);
+    localStorage.setItem(
+      "shein_affiliate_split",
+      affiliateId
+    );
 
     return affiliateId;
   }
 
   function buildOfferLink(cc){
+
     const offerId = offerByCountry[cc];
 
-    if(!offerId) return linkRest;
+    if(!offerId){
+      return linkRest;
+    }
 
     const affiliateId = getWeightedAffiliateId();
 
@@ -219,21 +362,30 @@ data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
   }
 
   function countryCodeToFlagEmoji(cc){
-    if(!cc || cc.length !== 2) return "";
+
+    if(!cc || cc.length !== 2){
+      return "";
+    }
 
     return String.fromCodePoint(
-      ...[...cc.toUpperCase()].map(c => 127397 + c.charCodeAt())
+      ...[...cc.toUpperCase()].map(
+        c => 127397 + c.charCodeAt()
+      )
     );
   }
 
   function setEligible(cc, countryName){
 
-    if(countryName){
+    if(cc && countryName){
+
       eligibleBox.textContent =
         `✅ Reward available in ${countryName} ${countryCodeToFlagEmoji(cc)}`;
+
     } else {
+
       eligibleBox.textContent =
         `✅ Reward available in your country 🌍`;
+
     }
 
     const target = buildOfferLink(cc);
@@ -243,26 +395,58 @@ data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
     });
   }
 
-  fetch("https://ipapi.co/json/")
-    .then(res => res.json())
-    .then(data => {
+  buttons.forEach(btn => {
+    btn.href = linkRest;
+  });
 
-      if(data && data.country){
-        setEligible(data.country, data.country_name);
-      } else {
-        setEligible(null, null);
+  async function detectCountry(){
+
+    try{
+
+      const res1 = await fetch("https://ipapi.co/json/");
+      const data1 = await res1.json();
+
+      if(data1 && data1.country){
+
+        setEligible(
+          data1.country,
+          data1.country_name
+        );
+
+        return;
       }
 
-    })
-    .catch(() => {
+    } catch(e){}
 
-      setEligible(null, null);
+    try{
 
-    });
+      const res2 = await fetch("https://ipwho.is/");
+      const data2 = await res2.json();
 
-  buttons.forEach((btn) => {
+      if(
+        data2 &&
+        data2.success &&
+        data2.country_code
+      ){
 
-    btn.addEventListener('click', (e) => {
+        setEligible(
+          data2.country_code,
+          data2.country
+        );
+
+        return;
+      }
+
+    } catch(e){}
+
+    setEligible(null, null);
+  }
+
+  detectCountry();
+
+  buttons.forEach((btn)=>{
+
+    btn.addEventListener('click',(e)=>{
 
       e.preventDefault();
 
@@ -272,9 +456,9 @@ data-website-id="2875d3d9-c203-43fe-b9ac-12b68848cc31"></script>
         umami.track("SHEIN Offer Click");
       }
 
-      setTimeout(() => {
+      setTimeout(()=>{
         window.location.href = url;
-      }, 160);
+      },160);
 
     });
 
