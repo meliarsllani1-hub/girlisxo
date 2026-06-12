@@ -15,6 +15,9 @@
     --pink2:#ff7ec6;
     --text:#111;
     --muted:#6d6d6d;
+    --card:#ffffff;
+    --line:#eeeeee;
+    --shadow:0 10px 28px rgba(0,0,0,.10);
     --shadowSoft:0 10px 24px rgba(0,0,0,.06);
   }
 
@@ -59,6 +62,7 @@
     color:var(--muted);
     margin:0 0 6px;
     font-weight:900;
+    letter-spacing:.1px;
   }
 
   .headline{
@@ -66,6 +70,7 @@
     line-height:1.18;
     margin:0 0 8px;
     font-weight:900;
+    letter-spacing:-.3px;
   }
 
   .sub{
@@ -89,8 +94,33 @@
     width:100%;
     margin:12px auto 10px;
     text-decoration:none;
+    position:relative;
+    transition:transform .18s ease, filter .18s ease;
     box-shadow:0 18px 40px rgba(255,79,166,.26);
+    -webkit-tap-highlight-color:transparent;
+    user-select:none;
     overflow:hidden;
+  }
+
+  .shein-btn:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(
+      140px 70px at 18% 45%,
+      rgba(255,255,255,.26),
+      transparent 60%
+    );
+    pointer-events:none;
+  }
+
+  .shein-btn:hover{
+    transform:scale(1.02);
+    filter:saturate(1.04);
+  }
+
+  .shein-btn:active{
+    transform:scale(0.99);
   }
 
   .btn-icon{
@@ -98,6 +128,7 @@
     height:44px;
     border-radius:50%;
     flex:0 0 auto;
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
     background:#fff;
   }
 
@@ -107,15 +138,18 @@
     flex-direction:column;
     align-items:flex-start;
     margin-left:12px;
+    min-width:0;
   }
 
   .btn-title{
     font-size:16px;
     font-weight:900;
+    line-height:1.15;
   }
 
   .btn-sub{
     font-size:12px;
+    opacity:.96;
     margin-top:3px;
     font-weight:900;
   }
@@ -130,6 +164,8 @@
     justify-content:center;
     font-weight:900;
     margin-left:10px;
+    flex:0 0 auto;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);
   }
 
   .micro{
@@ -141,7 +177,7 @@
   }
 
   .eligible-box{
-    background:#fff;
+    background:rgba(255,255,255,.94);
     margin:10px auto 14px;
     padding:11px 14px;
     font-size:13px;
@@ -168,7 +204,7 @@
     border:1px solid rgba(238,238,238,.95);
     border-radius:18px;
     padding:12px;
-    background:#fff;
+    background:rgba(255,255,255,.97);
     box-shadow:var(--shadowSoft);
   }
 
@@ -176,8 +212,10 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:10px;
     font-weight:900;
     font-size:13px;
+    color:#222;
     margin-bottom:8px;
   }
 
@@ -188,11 +226,13 @@
     border-radius:999px;
     border:1px solid #f1f1f1;
     background:#fafafa;
+    color:#333;
   }
 
   .steps{
     margin-top:6px;
     font-size:13px;
+    color:#333;
     line-height:1.55;
     font-weight:850;
   }
@@ -202,6 +242,11 @@
     gap:10px;
     align-items:flex-start;
     padding:8px 6px;
+    border-radius:12px;
+  }
+
+  .step-row:not(:last-child){
+    border-bottom:1px solid rgba(0,0,0,.04);
   }
 
   .step-num{
@@ -215,7 +260,12 @@
     justify-content:center;
     font-weight:900;
     font-size:12px;
+    margin-top:1px;
     flex:0 0 auto;
+  }
+
+  .step-text{
+    flex:1;
   }
 
   .tip{
@@ -224,20 +274,6 @@
     color:#7a7a7a;
     font-weight:900;
     text-align:center;
-  }
-
-  .disclaimer{
-    text-align:center;
-    font-size:10px;
-    color:rgba(0,0,0,0.38);
-    margin-top:18px;
-    line-height:1.45;
-    text-shadow:0 1px 2px rgba(0,0,0,0.08);
-    padding:0 14px 10px;
-    max-width:420px;
-    margin-left:auto;
-    margin-right:auto;
-    font-weight:600;
   }
 </style>
 </head>
@@ -262,7 +298,7 @@
     </div>
   </div>
 
-  <a href="#" class="shein-btn cta-link" id="shein-btn">
+  <a href="#" class="shein-btn cta-link" id="shein-btn" aria-label="SHEIN Gift Card">
 
     <img class="btn-icon"
     src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp"
@@ -273,12 +309,12 @@
       <span class="btn-sub">Continue →</span>
     </div>
 
-    <div class="btn-arrow">›</div>
+    <div class="btn-arrow" aria-hidden="true">›</div>
 
   </a>
 
   <p class="micro">
-    works on mobile
+    works on mobile • official partners
   </p>
 
   <div class="eligible-box" id="eligible-box">
@@ -287,7 +323,7 @@
 
   <div class="divider"></div>
 
-  <div class="how-box">
+  <div class="how-box" id="how">
 
     <div class="how-head">
       <span>How it works</span>
@@ -298,17 +334,17 @@
 
       <div class="step-row">
         <div class="step-num">1</div>
-        <div>Tap the pink button above 👆</div>
+        <div class="step-text">Tap the pink button above 👆</div>
       </div>
 
       <div class="step-row">
         <div class="step-num">2</div>
-        <div>Enter your email to continue</div>
+        <div class="step-text">Enter your email to continue</div>
       </div>
 
       <div class="step-row">
         <div class="step-num">3</div>
-        <div>Follow the steps shown to claim ✅</div>
+        <div class="step-text">Follow the steps shown to claim ✅</div>
       </div>
 
     </div>
@@ -318,13 +354,6 @@
     </p>
 
   </div>
-
-  <p class="disclaimer">
-    This website is independently operated and is not affiliated with,
-    endorsed by, or officially connected to SHEIN or any of its subsidiaries,
-    partners, or brands. All trademarks, logos, and brand names are the
-    property of their respective owners.
-  </p>
 
 </div>
 
